@@ -9,7 +9,7 @@
     </settings>
     
 	<!--
-		servidor = 10.2.65.37
+		servidor = 10.2.65.6
 		user = control
 		puerto = 3306
 		password = control20101

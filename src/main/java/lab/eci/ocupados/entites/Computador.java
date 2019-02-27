@@ -1,38 +1,56 @@
 package lab.eci.ocupados.entites;
 
+
+
+import java.sql.Date;
+
 public class Computador {
+    
+    String nombreEquipo;
+    Date logOn;
+    Date logOff;
+    String ip;
+    
+    public Computador() {
+    }
+    
+    public Computador(String nombreEquipo, Date logOn, Date logOff, String ip) {
+        this.nombreEquipo = nombreEquipo;
+        this.logOn = logOn;
+        this.logOff = logOff;
+        this.ip = ip;
+    }
 
-	String nombre;
-	int id;
+    public String getNombreEquipo() {
+        return nombreEquipo;
+    }
 
-	public Computador(String nombre, int id) {
-		this.nombre = nombre;
-		this.id = id;
-	}
+    public void setNombreEquipo(String nombreEquipo) {
+        this.nombreEquipo = nombreEquipo;
+    }
 
-	public Computador() {
+    public Date getLogOn() {
+        return logOn;
+    }
 
-	}
+    public void setLogOn(Date logOn) {
+        this.logOn = logOn;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public Date getLogOff() {
+        return logOff;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setLogOff(Date logOff) {
+        this.logOff = logOff;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public String getIp() {
+        return ip;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	@Override
-	public String toString() {
-		return "Computador{" + "nombre=" + nombre + ", id=" + id + '}';
-	}
-
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+	
 }

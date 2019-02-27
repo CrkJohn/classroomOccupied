@@ -4,7 +4,9 @@ import com.google.inject.Injector;
 import org.mybatis.guice.XMLMyBatisModule;
 import java.util.Optional;
 import static com.google.inject.Guice.createInjector;
-import lab.eci.ocupados.samples.services.*;
+import lab.eci.ocupados.persistence.ComputadorDAO;
+import lab.eci.ocupados.persistence.mybatisimpl.MyBATISComputadorDAO;
+import lab.eci.ocupados.samples.services.impl.*;
 
 public class ServicesClassroomOcupiedFactory {
 
@@ -14,13 +16,14 @@ public class ServicesClassroomOcupiedFactory {
 
    private Injector myBatisInjector(String env, String pathResource) {
        return createInjector(new XMLMyBatisModule() {
-           @Override
-           protected void initialize() {
+            @Override
+            protected void initialize() {
                setEnvironmentId(env);
                setClassPathResource(pathResource);
-               
+               bind(ComputadorDAO.class).to(MyBATISComputadorDAO.class);
+               bind(ServicesClassroomOcupied.class).to(ServicesClassroomOcupiedImpl.class);
            }
-       });  
+       });
    }
 
    private ServicesClassroomOcupiedFactory(){
