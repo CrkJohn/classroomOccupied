@@ -12,8 +12,8 @@
 			datos as d,
 			(SELECT
 				LOWER(datos.equipo) as equipo, MAX(datos.logon) as logon
-				FROM  datos, computadores
-				WHERE laboratorio=#{salon} AND LOWER(datos.equipo)=LOWER(computadores.equipo)
+				FROM  datos, SALONES
+				WHERE SALONES.eq_salon=#{salon} AND LOWER(datos.equipo)=LOWER(eq_nombre)
 				GROUP BY equipo) as q
 		WHERE LOWER(d.equipo) = q.equipo and d.logon = q.logon
 		ORDER BY equipo
