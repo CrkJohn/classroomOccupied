@@ -6,14 +6,14 @@
 <mapper namespace="lab.eci.ocupados.persistence.mybatisimpl.mappers.ComputerMapper">
 
 	<select  parameterType="map" id="getComputadoresBySalon" resultMap="ComputerResult">  
-        SELECT
+      	 SELECT
         	LOWER(d.equipo) as equipo, d.logon, d.logoff, d.ip
 		FROM
 			datos as d,
 			(SELECT
 				LOWER(datos.equipo) as equipo, MAX(datos.logon) as logon
-				FROM  datos, SALONES
-				WHERE SALONES.eq_salon=#{salon} AND LOWER(datos.equipo)=LOWER(eq_nombre)
+				FROM  datos, computadores
+				WHERE laboratorio=#{salon} AND LOWER(datos.equipo)=LOWER(computadores.equipo)
 				GROUP BY equipo) as q
 		WHERE LOWER(d.equipo) = q.equipo and d.logon = q.logon
 		ORDER BY equipo

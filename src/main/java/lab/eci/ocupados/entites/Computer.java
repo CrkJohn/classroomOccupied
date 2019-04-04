@@ -12,6 +12,7 @@ public class Computer {
     String ip;
     
     public Computer(){
+    	
     }
     
     public Computer(String nombreEquipo, Date logOn, Date logOff, String ip) {

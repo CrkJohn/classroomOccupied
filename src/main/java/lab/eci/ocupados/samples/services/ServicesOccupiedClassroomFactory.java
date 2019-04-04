@@ -1,9 +1,11 @@
 package lab.eci.ocupados.samples.services;
 
-import com.google.inject.Injector;
 import org.mybatis.guice.XMLMyBatisModule;
-import java.util.Optional;
+import org.mybatis.guice.datasource.helper.JdbcHelper;
 import static com.google.inject.Guice.createInjector;
+import com.google.inject.Injector;
+import java.util.Optional;
+
 import lab.eci.ocupados.persistence.ComputerDAO;
 import lab.eci.ocupados.persistence.mybatisimpl.MyBATISComputadorDAO;
 import lab.eci.ocupados.samples.services.impl.*;
@@ -18,6 +20,7 @@ public class ServicesOccupiedClassroomFactory {
        return createInjector(new XMLMyBatisModule() {
             @Override
             protected void initialize() {
+               //install(JdbcHelper.MySQL); 
                setEnvironmentId(env);
                setClassPathResource(pathResource);
                bind(ComputerDAO.class).to(MyBATISComputadorDAO.class);
