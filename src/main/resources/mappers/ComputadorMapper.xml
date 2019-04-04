@@ -3,19 +3,27 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="lab.eci.ocupados.persistence.mybatisimpl.mappers.ComputadorMapper">
+<mapper namespace="lab.eci.ocupados.persistence.mybatisimpl.mappers.ComputerMapper">
 
-	<select  parameterType="map" id="getComputadores" resultMap="ComputadorResult">
-		SELECT 
-		*
-		FROM  datos;
-               
+	<select  parameterType="map" id="getComputadoresBySalon" resultMap="ComputerResult">  
+        SELECT
+        	LOWER(d.equipo) as equipo, d.logon, d.logoff, d.ip
+		FROM
+			datos as d,
+			(SELECT
+				LOWER(datos.equipo) as equipo, MAX(datos.logon) as logon
+				FROM  datos, SALONES
+				WHERE SALONES.eq_salon=#{salon} AND LOWER(datos.equipo)=LOWER(eq_nombre)
+				GROUP BY equipo) as q
+		WHERE LOWER(d.equipo) = q.equipo and d.logon = q.logon
+		ORDER BY equipo
 	</select>
 	
-	<resultMap type="Computador" id="ComputadorResult">
-		<id property='id' column='idComputador'/>
-		
-		<result property='nombre' column='nombreComputador'/>       
+	<resultMap type="Computer" id="ComputerResult">
+		<id property='ip' column='ip'/>
+		<result property='nombreEquipo' column='equipo'/>
+		<result property='logOn' column='logon'/>
+		<result property='logOff' column='logoff'/>
 	</resultMap>
 	
 </mapper>

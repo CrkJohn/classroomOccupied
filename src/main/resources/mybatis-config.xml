@@ -15,7 +15,10 @@
 		password = control20101
 		namebd = control
 	-->
-
+	<typeAliases>
+        <typeAlias type='lab.eci.ocupados.entites.Computer' alias='Computer'/>
+    </typeAliases>
+	
 
 	<environments default="development">
         <environment id="development">
@@ -28,6 +31,10 @@
             </dataSource>
         </environment>
     </environments>
-
 	
+
+	<mappers>
+    	<mapper resource="mappers/ComputerMapper.xml"></mapper>
+    </mappers>
+    
 </configuration>

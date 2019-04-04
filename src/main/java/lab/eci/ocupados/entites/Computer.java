@@ -4,17 +4,17 @@ package lab.eci.ocupados.entites;
 
 import java.sql.Date;
 
-public class Computador {
+public class Computer {
     
     String nombreEquipo;
     Date logOn;
     Date logOff;
     String ip;
     
-    public Computador() {
+    public Computer(){
     }
     
-    public Computador(String nombreEquipo, Date logOn, Date logOff, String ip) {
+    public Computer(String nombreEquipo, Date logOn, Date logOff, String ip) {
         this.nombreEquipo = nombreEquipo;
         this.logOn = logOn;
         this.logOff = logOff;
@@ -29,7 +29,7 @@ public class Computador {
         this.nombreEquipo = nombreEquipo;
     }
 
-    public Date getLogOn() {
+	public Date getLogOn() {
         return logOn;
     }
 
@@ -52,5 +52,11 @@ public class Computador {
     public void setIp(String ip) {
         this.ip = ip;
     }
+    
+    @Override
+	public String toString() {
+		return "Computer [nombreEquipo=" + nombreEquipo + ", logOn=" + logOn + ", logOff=" + logOff + ", ip=" + ip
+				+ "]";
+	}
 	
 }

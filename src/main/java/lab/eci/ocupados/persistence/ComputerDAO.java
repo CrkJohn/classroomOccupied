@@ -3,8 +3,8 @@ package lab.eci.ocupados.persistence;
 import java.util.*;
 import lab.eci.ocupados.entites.*;
 
-public interface  ComputadorDAO {
+public interface  ComputerDAO {
     
-    public ArrayList<Computador> getComputadores();
+    public ArrayList<Computer> getComputadoresBySalon(String salon);
     
 }

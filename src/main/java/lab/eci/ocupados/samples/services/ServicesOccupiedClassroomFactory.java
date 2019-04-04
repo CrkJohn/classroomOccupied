@@ -4,13 +4,13 @@ import com.google.inject.Injector;
 import org.mybatis.guice.XMLMyBatisModule;
 import java.util.Optional;
 import static com.google.inject.Guice.createInjector;
-import lab.eci.ocupados.persistence.ComputadorDAO;
+import lab.eci.ocupados.persistence.ComputerDAO;
 import lab.eci.ocupados.persistence.mybatisimpl.MyBATISComputadorDAO;
 import lab.eci.ocupados.samples.services.impl.*;
 
-public class ServicesClassroomOcupiedFactory {
+public class ServicesOccupiedClassroomFactory {
 
-   private static ServicesClassroomOcupiedFactory instance = new ServicesClassroomOcupiedFactory();
+   private static ServicesOccupiedClassroomFactory instance = new ServicesOccupiedClassroomFactory();
 
    private static Optional<Injector> optInjector;
 
@@ -20,35 +20,28 @@ public class ServicesClassroomOcupiedFactory {
             protected void initialize() {
                setEnvironmentId(env);
                setClassPathResource(pathResource);
-               bind(ComputadorDAO.class).to(MyBATISComputadorDAO.class);
-               bind(ServicesClassroomOcupied.class).to(ServicesClassroomOcupiedImpl.class);
+               bind(ComputerDAO.class).to(MyBATISComputadorDAO.class);
+               bind(ServicesOccupiedClassroom.class).to(ServicesOccupiedClassroomImpl.class);
            }
        });
    }
 
-   private ServicesClassroomOcupiedFactory(){
+   private ServicesOccupiedClassroomFactory(){
        optInjector = Optional.empty();
    }
 
-   public ServicesClassroomOcupied getServiciosAlquiler(){
+   public ServicesOccupiedClassroom getServicesOccupiedClassroom(){
        if (!optInjector.isPresent()) {
            optInjector = Optional.of(myBatisInjector("development","mybatis-config.xml"));
        }
 
-       return optInjector.get().getInstance(ServicesClassroomOcupied.class);
+       return optInjector.get().getInstance(ServicesOccupiedClassroom.class);
    }
 
 
-   public ServicesClassroomOcupied getServiciosAlquilerTesting(){
-       if (!optInjector.isPresent()) {
-           optInjector = Optional.of(myBatisInjector("test","mybatis-config-h2.xml"));
-       }
-
-       return optInjector.get().getInstance(ServicesClassroomOcupied.class);
-   }
 
 
-   public static ServicesClassroomOcupiedFactory getInstance(){
+   public static ServicesOccupiedClassroomFactory getInstance(){
        return instance;
    }
 
