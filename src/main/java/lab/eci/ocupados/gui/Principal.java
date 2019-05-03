@@ -7,19 +7,15 @@ package lab.eci.ocupados.gui;
 
 /**
  *
- * @author 2129082
+ * @author rescate
  */
-public class Redes extends javax.swing.JPanel {
+public class Principal extends javax.swing.JPanel {
 
     /**
-     * Creates new form Redes
+     * Creates new form Principal
      */
-    public Redes() {
+    public Principal() {
         initComponents();
-    }
-
-    Redes(PanelMain aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**

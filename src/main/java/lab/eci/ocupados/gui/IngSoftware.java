@@ -5,23 +5,37 @@
  */
 package lab.eci.ocupados.gui;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 /**
  *
- * @author 2129082
+ * @author 2129082 y 2131608
  */
-public class Redes extends javax.swing.JPanel {
+public class IngSoftware extends JPanel {
 
+    private PanelMain frame;
+    private Image background;
+    
+    
     /**
-     * Creates new form Redes
+     * Creates new form ingSoftware
      */
-    public Redes() {
+    public IngSoftware(PanelMain main) {
+        super();
+        this.frame = main;
         initComponents();
+        prepareElements();
+        setOpaque(false);
+	setFocusable(false);
     }
 
-    Redes(PanelMain aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void prepareElements(){
+        background = Toolkit.getDefaultToolkit().createImage(getClass().getResource("/img/IngSoftware&Salita.PNG"));
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -43,7 +57,13 @@ public class Redes extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+    
+    @Override
+    public void paint(Graphics g){
+        g.drawImage(background,0,0,frame.getWidth(), frame.getHeight(), this);
+        super.paint(g);
+    }
+
 }
