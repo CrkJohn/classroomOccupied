@@ -5,26 +5,27 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import java.util.ArrayList;
+import java.util.List;
+import lab.eci.ocupados.entites.Computer;
+import lab.eci.ocupados.samples.services.ServicesOccupiedClassroom;
 
 public class B0 extends JPanel {
 
     private PanelMain frame;
     private Image fondo;
     private Image background;
- 
+    private ArrayList<javax.swing.JRadioButton> buttons = new ArrayList<javax.swing.JRadioButton>();
+    
     public B0(PanelMain aThis) {
         super();
         this.frame = aThis;   
         initComponents();
         prepareElementos();
         setOpaque(false);
-	setFocusable(false);
-     
+        setFocusable(false);
+        reload();
     }
-
-
-   
-   
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -450,7 +451,7 @@ public class B0 extends JPanel {
     }//GEN-LAST:event_jRadioButton29ActionPerformed
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+ // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton jRadioButton50;
     private javax.swing.JRadioButton jRadioButton51;
     private javax.swing.JRadioButton jRadioButton52;
@@ -480,6 +481,31 @@ public class B0 extends JPanel {
 
     private void prepareElementos() {
         fondo = Toolkit.getDefaultToolkit().createImage(getClass().getResource("/img/B0.png"));
+        buttons.add(jRadioButton50);
+        buttons.add(jRadioButton51);
+        buttons.add(jRadioButton52);
+        buttons.add(jRadioButton53);
+        buttons.add(jRadioButton54);
+        buttons.add(jRadioButton55);
+        buttons.add(jRadioButton56);
+        buttons.add(jRadioButton57);
+        buttons.add(jRadioButton58);
+        buttons.add(jRadioButton59);
+        buttons.add(jRadioButton60);
+        buttons.add(jRadioButton61);
+        buttons.add(jRadioButton62);
+        buttons.add(jRadioButton63);
+        buttons.add(jRadioButton64);
+        buttons.add(jRadioButton65);
+        buttons.add(jRadioButton66);
+        buttons.add(jRadioButton67);
+        buttons.add(jRadioButton68);
+        buttons.add(jRadioButton69);
+        buttons.add(jRadioButton70);
+        buttons.add(jRadioButton71);
+        buttons.add(jRadioButton72);
+        buttons.add(jRadioButton73);
+        buttons.add(jRadioButton74);
     }
     
     
@@ -488,6 +514,22 @@ public class B0 extends JPanel {
 		g.drawImage(fondo,0,0,frame.getWidth(), frame.getHeight(), this);
 		super.paint(g);
     }
-	
+    
+    public void reload(){
+        List<Computer> computers = PanelMain.services.getComputadoresBySalon("b0");
+        for(Computer computer: computers){
+            System.out.println(computer);
+            String nameComputer = computer.getNombreEquipo();
+            nameComputer = nameComputer.substring(8, nameComputer.length());
+            int numComputer = Integer.parseInt(nameComputer);
+            int pos = numComputer-50;
+            if(computer.getLogOn()!=null && computer.getLogOff()==null){
+                if(numComputer >=50 && numComputer <=74){
+                    buttons.get(pos).doClick();
+                    //System.out.println("POS = "+pos);
+                }
+            }
+        }
+    }
 
 }

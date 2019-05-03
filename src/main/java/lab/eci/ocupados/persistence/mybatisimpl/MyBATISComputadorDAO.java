@@ -1,6 +1,7 @@
 package lab.eci.ocupados.persistence.mybatisimpl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.google.inject.Inject;
 import lab.eci.ocupados.entites.*;
@@ -14,7 +15,9 @@ public class MyBATISComputadorDAO implements ComputerDAO{
 	private ComputerMapper computadorMapper;
 	
 	public ArrayList<Computer> getComputadoresBySalon(String salon) {
+		ArrayList<String> list = new ArrayList<String>();
 		return computadorMapper.getComputadoresBySalon(salon);
+		
 	}
 
 }

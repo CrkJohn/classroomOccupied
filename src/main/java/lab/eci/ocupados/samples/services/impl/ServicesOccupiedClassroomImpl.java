@@ -15,7 +15,7 @@ public class ServicesOccupiedClassroomImpl implements ServicesOccupiedClassroom 
     private ComputerDAO computadorDAO;
 
     public List<Computer> getComputadoresBySalon(String salon) {		
-		return computadorDAO.getComputadoresBySalon(salon);
-	}
+	return computadorDAO.getComputadoresBySalon(salon);
+    }
 
 }

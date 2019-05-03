@@ -6,6 +6,6 @@ import lab.eci.ocupados.entites.Computer;
 
 public interface ServicesOccupiedClassroom {
 	
-	public List<Computer> getComputadoresBySalon(String salon);
+    public List<Computer> getComputadoresBySalon(String salon);
 	
 }

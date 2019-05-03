@@ -29,7 +29,7 @@ public class IngSoftware extends JPanel {
         initComponents();
         prepareElements();
         setOpaque(false);
-	setFocusable(false);
+        setFocusable(false);
     }
 
     private void prepareElements(){

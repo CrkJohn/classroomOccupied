@@ -10,10 +10,10 @@
     
 	<!--
 		servidor = 10.2.65.6
+                namebd = control
 		user = control
-		puerto = 3306
-		password = control20101
-		namebd = control
+                password = control20101
+		puerto = 3306		
 	-->
 	<typeAliases>
         <typeAlias type='lab.eci.ocupados.entites.Computer' alias='Computer'/>

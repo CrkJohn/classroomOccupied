@@ -6,6 +6,11 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import lab.eci.ocupados.samples.services.ServicesOccupiedClassroom;
+import lab.eci.ocupados.samples.services.ServicesOccupiedClassroomFactory;
+import static lab.eci.ocupados.samples.services.client.MyBatisExample.getSqlSessionFactory;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 
 public class PanelMain extends JFrame {
 
@@ -16,13 +21,17 @@ public class PanelMain extends JFrame {
 	private Plataformas plataformas;
 	private Redes redes;
 	private IngSoftware ingSoftware;
-
+        
+        private static SqlSessionFactory sessionfact = getSqlSessionFactory();
+        private static SqlSession sqlss = sessionfact.openSession();
+        private static ServicesOccupiedClassroomFactory servicesFactory = ServicesOccupiedClassroomFactory.getInstance();
+        public static ServicesOccupiedClassroom services = servicesFactory.getServicesOccupiedClassroom();
+        
 	public PanelMain() {
-		prepareElementos();
-		prepareAcciones();                
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                setVisible(true);
-		// initComponents();
+            prepareElementos();
+            prepareAcciones();                
+            setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            setVisible(true);
 	}
 
 	private void prepareElementos() {
@@ -35,19 +44,18 @@ public class PanelMain extends JFrame {
 		principal = new JPanel(layout);
                 add(principal);
                 
-		//b0 = new B0(this);
+		b0 = new B0(this);
 		// plataformas = new Plataformas(this);
 		// redes = new Redes(this);
-		ingSoftware = new IngSoftware(this);
-		//principal.add(b0, "B0");
+		//ingSoftware = new IngSoftware(this);
+		principal.add(b0, "B0");
 		// principal.add(plataformas,"plataformas");
 		// principal.add(redes,"redes");
-		principal.add(ingSoftware,"ingSoftware");
+		//principal.add(ingSoftware,"ingSoftware");
                 centro();
 		setResizable(false);
                 IniciarTA();
 		setFocusable(false);
-		
 	}
 
 	private void prepareAcciones() {
