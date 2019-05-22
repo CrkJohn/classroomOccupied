@@ -52,11 +52,11 @@ public class PanelMain extends JFrame implements Runnable {
 
         b0 = new B0(this);
         plataformas = new Plataformas(this);
-        // redes = new Redes(this);
+        redes = new Redes(this);
         //ingSoftware = new IngSoftware(this);
         principal.add(b0, "B0");
         principal.add(plataformas, "plataformas");
-        // principal.add(redes,"redes");
+        principal.add(redes,"redes");
         //principal.add(ingSoftware,"ingSoftware");
         centro();
         salonesObj = new LoadData[4];
@@ -120,7 +120,7 @@ public class PanelMain extends JFrame implements Runnable {
                 System.out.println(salonesObj[i].getClass());
                 salonesObj[i].reload();
                 irPanel(salones[i]);
-                i = (i + 1) % 2; //;salones.length;
+                i = (i + 1) % 3; //;salones.length;
             }
 
         } catch (InterruptedException ex) {
