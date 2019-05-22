@@ -10,7 +10,7 @@ import java.util.List;
 import lab.eci.ocupados.entites.Computer;
 import lab.eci.ocupados.samples.services.ServicesOccupiedClassroom;
 
-public class B0 extends JPanel {
+public class B0 extends JPanel implements LoadData{
 
     private PanelMain frame;
     private Image fondo;
@@ -57,153 +57,178 @@ public class B0 extends JPanel {
         jRadioButton73 = new javax.swing.JRadioButton();
         jRadioButton72 = new javax.swing.JRadioButton();
 
+        jRadioButton50.setContentAreaFilled(false);
         jRadioButton50.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton50ActionPerformed(evt);
             }
-			
         });
 
+        jRadioButton51.setContentAreaFilled(false);
         jRadioButton51.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton51ActionPerformed(evt);
             }
         });
 
-        jRadioButton52.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton52ActionPerformed(evt);
-            }
-        });
-		
-		jRadioButton53.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton53ActionPerformed(evt);
-            }
-        });
-		
-		jRadioButton54.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton54.setContentAreaFilled(false);
+        jRadioButton54.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton54ActionPerformed(evt);
             }
         });
 
+        jRadioButton53.setContentAreaFilled(false);
+        jRadioButton53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton53ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton52.setContentAreaFilled(false);
+        jRadioButton52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton52ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton59.setContentAreaFilled(false);
+        jRadioButton59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton59ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton58.setContentAreaFilled(false);
+        jRadioButton58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton58ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton57.setContentAreaFilled(false);
+        jRadioButton57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton57ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton55.setContentAreaFilled(false);
         jRadioButton55.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton55ActionPerformed(evt);
             }
         });
 
+        jRadioButton56.setContentAreaFilled(false);
         jRadioButton56.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton56ActionPerformed(evt);
             }
         });
 
-        jRadioButton57.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton64.setContentAreaFilled(false);
+        jRadioButton64.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton57ActionPerformed(evt);
-            }
-        });
-		
-		jRadioButton58.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton58ActionPerformed(evt);
-            }
-        });
-		
-		jRadioButton59.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton59ActionPerformed(evt);
+                jRadioButton64ActionPerformed(evt);
             }
         });
 
-        jRadioButton60.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton63.setContentAreaFilled(false);
+        jRadioButton63.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton60ActionPerformed(evt);
-            }
-        });      
-
-		jRadioButton61.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton61ActionPerformed(evt);
+                jRadioButton63ActionPerformed(evt);
             }
         });
 
+        jRadioButton62.setContentAreaFilled(false);
         jRadioButton62.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton62ActionPerformed(evt);
             }
         });
-		
-		jRadioButton63.addActionListener(new java.awt.event.ActionListener() {
+
+        jRadioButton69.setContentAreaFilled(false);
+        jRadioButton69.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton63ActionPerformed(evt);
+                jRadioButton69ActionPerformed(evt);
             }
         });
-		
-		jRadioButton64.addActionListener(new java.awt.event.ActionListener() {
+
+        jRadioButton68.setContentAreaFilled(false);
+        jRadioButton68.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton64ActionPerformed(evt);
+                jRadioButton68ActionPerformed(evt);
             }
         });
-		
-		jRadioButton65.addActionListener(new java.awt.event.ActionListener() {
+
+        jRadioButton67.setContentAreaFilled(false);
+        jRadioButton67.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton67ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton60.setContentAreaFilled(false);
+        jRadioButton60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton60ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton65.setContentAreaFilled(false);
+        jRadioButton65.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton65ActionPerformed(evt);
             }
         });
 
+        jRadioButton66.setContentAreaFilled(false);
         jRadioButton66.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton66ActionPerformed(evt);
             }
         });
 
-        jRadioButton67.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton61.setContentAreaFilled(false);
+        jRadioButton61.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton67ActionPerformed(evt);
-            }
-        });
-        jRadioButton68.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton68ActionPerformed(evt);
-            }
-        });
-		
-		jRadioButton69.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton69ActionPerformed(evt);
+                jRadioButton61ActionPerformed(evt);
             }
         });
 
+        jRadioButton70.setContentAreaFilled(false);
         jRadioButton70.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton70ActionPerformed(evt);
             }
         });
 
+        jRadioButton71.setContentAreaFilled(false);
         jRadioButton71.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton71ActionPerformed(evt);
             }
         });
 
-		jRadioButton72.addActionListener(new java.awt.event.ActionListener() {
+        jRadioButton74.setContentAreaFilled(false);
+        jRadioButton74.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton72ActionPerformed(evt);
+                jRadioButton74ActionPerformed(evt);
             }
         });
-		
-		jRadioButton73.addActionListener(new java.awt.event.ActionListener() {
+
+        jRadioButton73.setContentAreaFilled(false);
+        jRadioButton73.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton73ActionPerformed(evt);
             }
         });
-		
-		jRadioButton74.addActionListener(new java.awt.event.ActionListener() {
+
+        jRadioButton72.setContentAreaFilled(false);
+        jRadioButton72.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton74ActionPerformed(evt);
+                jRadioButton72ActionPerformed(evt);
             }
         });
 
@@ -451,7 +476,7 @@ public class B0 extends JPanel {
     }//GEN-LAST:event_jRadioButton29ActionPerformed
 
 
- // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton jRadioButton50;
     private javax.swing.JRadioButton jRadioButton51;
     private javax.swing.JRadioButton jRadioButton52;
@@ -523,11 +548,9 @@ public class B0 extends JPanel {
             nameComputer = nameComputer.substring(8, nameComputer.length());
             int numComputer = Integer.parseInt(nameComputer);
             int pos = numComputer-50;
-            if(computer.getLogOn()!=null && computer.getLogOff()==null){
-                if(numComputer >=50 && numComputer <=74){
-                    buttons.get(pos).doClick();
-                    //System.out.println("POS = "+pos);
-                }
+            if(computer.getLogOn()!=null && computer.getLogOff()==null){               
+                   if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
+                    //System.out.println("POS = "+pos);      
             }
         }
     }

@@ -9,7 +9,7 @@ package lab.eci.ocupados.gui;
  *
  * @author 2129082
  */
-public class Redes extends javax.swing.JPanel {
+public class Redes extends javax.swing.JPanel  implements LoadData {
 
     /**
      * Creates new form Redes
@@ -42,6 +42,11 @@ public class Redes extends javax.swing.JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    @Override
+    public void reload() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

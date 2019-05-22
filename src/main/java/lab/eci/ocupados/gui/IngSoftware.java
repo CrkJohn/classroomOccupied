@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  *
  * @author 2129082 y 2131608
  */
-public class IngSoftware extends JPanel {
+public class IngSoftware extends JPanel  implements LoadData {
 
     private PanelMain frame;
     private Image background;
@@ -64,6 +64,11 @@ public class IngSoftware extends JPanel {
     public void paint(Graphics g){
         g.drawImage(background,0,0,frame.getWidth(), frame.getHeight(), this);
         super.paint(g);
+    }
+
+    @Override
+    public void reload() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

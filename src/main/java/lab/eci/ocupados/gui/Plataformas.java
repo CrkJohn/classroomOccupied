@@ -1,25 +1,64 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab.eci.ocupados.gui;
 
-/**
- *
- * @author 2129082
- */
-public class Plataformas extends javax.swing.JPanel {
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
+import lab.eci.ocupados.entites.Computer;
 
-    /**
-     * Creates new form Plataformas
-     */
+public class Plataformas extends javax.swing.JPanel implements LoadData {
+
+    private PanelMain frame;
+    private Image fondo;
+    private Image background;
+    private ArrayList<javax.swing.JRadioButton> buttons = new ArrayList<javax.swing.JRadioButton>();
+
     public Plataformas() {
         initComponents();
+        prepareElementos();
     }
 
     Plataformas(PanelMain aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.frame = aThis;
+        initComponents();
+        prepareElementos();
+        setOpaque(false);
+        setFocusable(false);
+
+    }
+
+    private void prepareElementos() {
+        fondo = Toolkit.getDefaultToolkit().createImage(getClass().getResource("/img/Plataformas.png"));
+        buttons.add(jRadioButton2);
+        buttons.add(jRadioButton3);
+        buttons.add(jRadioButton4);
+        buttons.add(jRadioButton5);
+        buttons.add(jRadioButton6);
+        buttons.add(jRadioButton7);
+        buttons.add(jRadioButton8);
+        buttons.add(jRadioButton9);
+        buttons.add(jRadioButton10);
+        buttons.add(jRadioButton11);
+        buttons.add(jRadioButton12);
+        buttons.add(jRadioButton13);
+        buttons.add(jRadioButton14);
+        buttons.add(jRadioButton15);
+        buttons.add(jRadioButton16);
+        buttons.add(jRadioButton17);
+        buttons.add(jRadioButton18);
+        buttons.add(jRadioButton19);
+        buttons.add(jRadioButton21);
+        buttons.add(jRadioButton22);
+        buttons.add(jRadioButton23);
+        buttons.add(jRadioButton24);
+
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        g.drawImage(fondo, 0, 0, frame.getWidth(), frame.getHeight(), this);
+        super.paint(g);
     }
 
     /**
@@ -31,19 +70,255 @@ public class Plataformas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jRadioButton14 = new javax.swing.JRadioButton();
+        jRadioButton15 = new javax.swing.JRadioButton();
+        jRadioButton16 = new javax.swing.JRadioButton();
+        jRadioButton17 = new javax.swing.JRadioButton();
+        jRadioButton18 = new javax.swing.JRadioButton();
+        jRadioButton19 = new javax.swing.JRadioButton();
+        jRadioButton20 = new javax.swing.JRadioButton();
+        jRadioButton21 = new javax.swing.JRadioButton();
+        jRadioButton22 = new javax.swing.JRadioButton();
+        jRadioButton23 = new javax.swing.JRadioButton();
+        jRadioButton24 = new javax.swing.JRadioButton();
+
+        setPreferredSize(new java.awt.Dimension(872, 567));
+
+        jRadioButton1.setContentAreaFilled(false);
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton2.setContentAreaFilled(false);
+
+        jRadioButton3.setContentAreaFilled(false);
+
+        jRadioButton4.setContentAreaFilled(false);
+
+        jRadioButton5.setContentAreaFilled(false);
+
+        jRadioButton6.setContentAreaFilled(false);
+
+        jRadioButton7.setContentAreaFilled(false);
+
+        jRadioButton8.setContentAreaFilled(false);
+
+        jRadioButton9.setContentAreaFilled(false);
+
+        jRadioButton10.setContentAreaFilled(false);
+
+        jRadioButton11.setContentAreaFilled(false);
+
+        jRadioButton12.setContentAreaFilled(false);
+
+        jRadioButton13.setContentAreaFilled(false);
+
+        jRadioButton14.setContentAreaFilled(false);
+
+        jRadioButton15.setContentAreaFilled(false);
+
+        jRadioButton16.setContentAreaFilled(false);
+
+        jRadioButton17.setContentAreaFilled(false);
+
+        jRadioButton18.setContentAreaFilled(false);
+
+        jRadioButton19.setContentAreaFilled(false);
+
+        jRadioButton20.setContentAreaFilled(false);
+
+        jRadioButton21.setContentAreaFilled(false);
+
+        jRadioButton22.setContentAreaFilled(false);
+
+        jRadioButton23.setContentAreaFilled(false);
+
+        jRadioButton24.setContentAreaFilled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton6)
+                            .addComponent(jRadioButton7))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
+                                .addComponent(jRadioButton11))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton5)
+                                    .addComponent(jRadioButton2)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton8)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton3)
+                                    .addComponent(jRadioButton4)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jRadioButton9)
+                                .addGap(9, 9, 9))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jRadioButton12)
+                        .addGap(136, 136, 136)
+                        .addComponent(jRadioButton10)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton16, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jRadioButton15, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jRadioButton21, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jRadioButton22, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(66, 66, 66)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jRadioButton17)
+                    .addComponent(jRadioButton14)
+                    .addComponent(jRadioButton20)
+                    .addComponent(jRadioButton23))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton13)
+                    .addComponent(jRadioButton18)
+                    .addComponent(jRadioButton19)
+                    .addComponent(jRadioButton24))
+                .addGap(170, 170, 170))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(129, 129, 129)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jRadioButton10)
+                                    .addComponent(jRadioButton12)
+                                    .addComponent(jRadioButton11))
+                                .addGap(54, 54, 54)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jRadioButton9)
+                                    .addComponent(jRadioButton8)
+                                    .addComponent(jRadioButton7)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton13)
+                                    .addComponent(jRadioButton14)
+                                    .addComponent(jRadioButton15))
+                                .addGap(54, 54, 54)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton16)
+                                    .addComponent(jRadioButton17)
+                                    .addComponent(jRadioButton18))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(126, 126, 126)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jRadioButton4)
+                                    .addComponent(jRadioButton5)
+                                    .addComponent(jRadioButton6)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton20, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jRadioButton21)
+                                        .addGap(12, 12, 12))))))
+                    .addComponent(jRadioButton19))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButton1)
+                                    .addComponent(jRadioButton3))
+                                .addComponent(jRadioButton2))
+                            .addComponent(jRadioButton23)
+                            .addComponent(jRadioButton24)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jRadioButton22)))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
+
+        jRadioButton1.getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    @Override
+    public void reload() {
+        System.out.println("Papi");
+        List<Computer> computers = PanelMain.services.getComputadoresBySalon("plataformas");
+        for(Computer computer: computers){
+            System.out.println(computer);
+            String nameComputer = computer.getNombreEquipo();
+            nameComputer = nameComputer.substring(8, nameComputer.length());
+            int numComputer = Integer.parseInt(nameComputer);
+            int pos = 0;
+            if(computer.getLogOn()!=null && computer.getLogOff()==null){
+                //if(numComputer >=50 && numComputer <=74){
+                    buttons.get(pos).doClick();
+                    pos++;
+                    //System.out.println("POS = "+pos);
+                //}
+            }
+        }
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton11;
+    private javax.swing.JRadioButton jRadioButton12;
+    private javax.swing.JRadioButton jRadioButton13;
+    private javax.swing.JRadioButton jRadioButton14;
+    private javax.swing.JRadioButton jRadioButton15;
+    private javax.swing.JRadioButton jRadioButton16;
+    private javax.swing.JRadioButton jRadioButton17;
+    private javax.swing.JRadioButton jRadioButton18;
+    private javax.swing.JRadioButton jRadioButton19;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton20;
+    private javax.swing.JRadioButton jRadioButton21;
+    private javax.swing.JRadioButton jRadioButton22;
+    private javax.swing.JRadioButton jRadioButton23;
+    private javax.swing.JRadioButton jRadioButton24;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     // End of variables declaration//GEN-END:variables
 }
