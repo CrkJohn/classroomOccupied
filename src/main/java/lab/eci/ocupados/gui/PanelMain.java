@@ -53,11 +53,12 @@ public class PanelMain extends JFrame implements Runnable {
         b0 = new B0(this);
         plataformas = new Plataformas(this);
         redes = new Redes(this);
-        //ingSoftware = new IngSoftware(this);
+        ingSoftware = new IngSoftware(this);
+        
         principal.add(b0, "B0");
         principal.add(plataformas, "plataformas");
         principal.add(redes,"redes");
-        //principal.add(ingSoftware,"ingSoftware");
+        principal.add(ingSoftware,"ingSoftware");
         centro();
         salonesObj = new LoadData[4];
         salonesObj[0] = b0;
@@ -89,12 +90,11 @@ public class PanelMain extends JFrame implements Runnable {
     }
 
     private void IniciarTA() {
-        irPanel("B0");
+        irPanel("ingSoftware");
     }
 
     public void irPanel(String src) {
         layout.show(principal, src);
-
     }
 
     private void centro() {
@@ -106,8 +106,8 @@ public class PanelMain extends JFrame implements Runnable {
     public static void main(String args[]) {
         PanelMain GUI = new PanelMain();
         GUI.setVisible(true);
-        Thread t1 = new Thread(GUI);
-        t1.start();
+        //Thread t1 = new Thread(GUI);
+        //t1.start();
     }
 
     @Override
@@ -115,12 +115,12 @@ public class PanelMain extends JFrame implements Runnable {
         int i = 1;
         try {
             while (true) {
-                Thread.sleep(5000);
+                Thread.sleep(2000);
                 System.out.println("AXA " + i);
                 System.out.println(salonesObj[i].getClass());
                 salonesObj[i].reload();
                 irPanel(salones[i]);
-                i = (i + 1) % 3; //;salones.length;
+                i = (i + 1) % 4; //;salones.length;
             }
 
         } catch (InterruptedException ex) {

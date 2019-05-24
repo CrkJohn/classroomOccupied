@@ -276,7 +276,7 @@ public class Plataformas extends javax.swing.JPanel implements LoadData {
 
     @Override
     public void reload() {
-        System.out.println("Papi");
+
         List<Computer> computers = PanelMain.services.getComputadoresBySalon("plataformas");
         for(Computer computer: computers){
             System.out.println(computer);

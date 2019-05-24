@@ -543,12 +543,15 @@ public class B0 extends JPanel implements LoadData{
     public void reload(){
         List<Computer> computers = PanelMain.services.getComputadoresBySalon("b0");
         for(Computer computer: computers){
-            System.out.println(computer);
             String nameComputer = computer.getNombreEquipo();
-            nameComputer = nameComputer.substring(8, nameComputer.length());
+            if(nameComputer.contains("linux")){
+                nameComputer = nameComputer.substring(5, nameComputer.length());
+             }else{
+                nameComputer = nameComputer.substring(8, nameComputer.length());
+            }
             int numComputer = Integer.parseInt(nameComputer);
             int pos = numComputer-50;
-            if(computer.getLogOn()!=null && computer.getLogOff()==null){               
+            if(numComputer<=74 && computer.getLogOn()!=null && computer.getLogOff()==null){               
                    if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
                     //System.out.println("POS = "+pos);      
             }
