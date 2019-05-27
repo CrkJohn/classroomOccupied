@@ -126,7 +126,6 @@ public class PanelMain extends JFrame implements Runnable {
         } catch (InterruptedException ex) {
             Logger.getLogger(PanelMain.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
 }

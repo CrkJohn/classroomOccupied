@@ -9,6 +9,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.List;
+import lab.eci.ocupados.entites.Computer;
 
 /**
  *
@@ -202,9 +204,23 @@ public class Redes extends javax.swing.JPanel  implements LoadData {
 
     @Override
     public void reload() {
-        
+        List<Computer> computers = PanelMain.services.getComputadoresBySalon("plataformas");
+        for(Computer computer: computers){
+            String nameComputer = computer.getNombreEquipo();
+            if(nameComputer.contains("linux")){
+                nameComputer = nameComputer.substring(5, nameComputer.length());
+             }else{
+                nameComputer = nameComputer.substring(8, nameComputer.length());
+            }
+            int numComputer = Integer.parseInt(nameComputer);
+            int pos = numComputer-101; //revisar esto y las posiciones, empieza desde el 101 el primer computador
+            if(pos>=0 && pos<=15 && //son 16 computadores
+                    computer.getLogOn()!=null && computer.getLogOff()==null){               
+                   if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
+                    //System.out.println("POS = "+pos);      
+            }
+        }
     }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton jRadioButton1;

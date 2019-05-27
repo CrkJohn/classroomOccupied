@@ -550,8 +550,9 @@ public class B0 extends JPanel implements LoadData{
                 nameComputer = nameComputer.substring(8, nameComputer.length());
             }
             int numComputer = Integer.parseInt(nameComputer);
-            int pos = numComputer-50;
-            if(numComputer<=74 && computer.getLogOn()!=null && computer.getLogOff()==null){               
+            int pos = numComputer-50; // el primer computador es el 50
+            if(pos>=0 && pos<=24 //son 24 computadores
+                    && numComputer<=74 && computer.getLogOn()!=null && computer.getLogOff()==null){               
                    if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
                     //System.out.println("POS = "+pos);      
             }

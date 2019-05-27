@@ -8,8 +8,11 @@ package lab.eci.ocupados.gui;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import lab.eci.ocupados.entites.Computer;
 /**
  *
  * @author 2129082 y 2131608
@@ -18,7 +21,7 @@ public class IngSoftware extends JPanel  implements LoadData {
 
     private PanelMain frame;
     private Image background;
-    
+    private ArrayList<javax.swing.JRadioButton> buttons = new ArrayList<javax.swing.JRadioButton>();
     
     /**
      * Creates new form ingSoftware
@@ -34,6 +37,30 @@ public class IngSoftware extends JPanel  implements LoadData {
 
     private void prepareElements(){
         background = Toolkit.getDefaultToolkit().createImage(getClass().getResource("/img/IngSoftware.jpg"));
+        buttons.add(jRadioButton1);
+        buttons.add(jRadioButton2);
+        buttons.add(jRadioButton3);
+        buttons.add(jRadioButton4);
+        buttons.add(jRadioButton5);
+        buttons.add(jRadioButton6);
+        buttons.add(jRadioButton7);
+        buttons.add(jRadioButton8);
+        buttons.add(jRadioButton9);
+        buttons.add(jRadioButton10);
+        buttons.add(jRadioButton11);
+        buttons.add(jRadioButton12);
+        buttons.add(jRadioButton13);
+        buttons.add(jRadioButton14);
+        buttons.add(jRadioButton15);
+        buttons.add(jRadioButton16);
+        buttons.add(jRadioButton17);
+        buttons.add(jRadioButton18);
+        buttons.add(jRadioButton19);
+        buttons.add(jRadioButton20);
+        buttons.add(jRadioButton21);
+        buttons.add(jRadioButton22);
+        buttons.add(jRadioButton23);
+        buttons.add(jRadioButton24);
     }
     
     /**
@@ -477,7 +504,22 @@ public class IngSoftware extends JPanel  implements LoadData {
 
     @Override
     public void reload() {
-        
+        List<Computer> computers = PanelMain.services.getComputadoresBySalon("ingSoftware");
+        for(Computer computer: computers){
+            String nameComputer = computer.getNombreEquipo();
+            if(nameComputer.contains("linux")){
+                nameComputer = nameComputer.substring(5, nameComputer.length());
+             }else{
+                nameComputer = nameComputer.substring(8, nameComputer.length());
+            }
+            int numComputer = Integer.parseInt(nameComputer);
+            int pos = numComputer-1; // el primer computador es el 1
+            if(pos>=0 && pos<=23 // son 24 computadores
+                    && computer.getLogOn()!=null && computer.getLogOff()==null){               
+                   if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
+                    //System.out.println("POS = "+pos);      
+            }
+        }
     }
 
 }
