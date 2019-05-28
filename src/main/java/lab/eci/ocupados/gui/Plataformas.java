@@ -278,6 +278,10 @@ public class Plataformas extends javax.swing.JPanel implements LoadData {
     public void reload() {
 
         List<Computer> computers = PanelMain.services.getComputadoresBySalon("plataformas");
+        for(javax.swing.JRadioButton b : buttons){
+            b.getModel().setPressed(false);
+        }
+        int pos = 0;
         for(Computer computer: computers){
             System.out.println(computer);
             String nameComputer = computer.getNombreEquipo();
@@ -287,14 +291,10 @@ public class Plataformas extends javax.swing.JPanel implements LoadData {
                 nameComputer = nameComputer.substring(8, nameComputer.length());
             }
             int numComputer = Integer.parseInt(nameComputer);
-            int pos = 0;
             if(computer.getLogOn()!=null && computer.getLogOff()==null){
-                //if(numComputer >=50 && numComputer <=74){
-                    buttons.get(pos).doClick();
-                    pos++;
-                    //System.out.println("POS = "+pos);
-                //}
+                buttons.get(pos).getModel().setPressed(true);
             }
+            pos++;
         }
     }
 

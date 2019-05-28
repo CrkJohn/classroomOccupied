@@ -36,7 +36,22 @@ public class Redes extends javax.swing.JPanel  implements LoadData {
     
     private void prepareElementos() {
         fondo = Toolkit.getDefaultToolkit().createImage(getClass().getResource("/img/Redes.png"));
-        
+        buttons.add(jRadioButton1);
+        buttons.add(jRadioButton2);
+        buttons.add(jRadioButton3);
+        buttons.add(jRadioButton4);
+        buttons.add(jRadioButton5);
+        buttons.add(jRadioButton6);
+        buttons.add(jRadioButton7);
+        buttons.add(jRadioButton8);
+        buttons.add(jRadioButton9);
+        buttons.add(jRadioButton10);
+        buttons.add(jRadioButton11);
+        buttons.add(jRadioButton12);
+        buttons.add(jRadioButton13);
+        buttons.add(jRadioButton14);
+        buttons.add(jRadioButton15);
+        buttons.add(jRadioButton16);
     }
     
     @Override
@@ -204,7 +219,12 @@ public class Redes extends javax.swing.JPanel  implements LoadData {
 
     @Override
     public void reload() {
-        List<Computer> computers = PanelMain.services.getComputadoresBySalon("plataformas");
+        List<Computer> computers = PanelMain.services.getComputadoresBySalon("redes");
+        for(javax.swing.JRadioButton b : buttons){
+            b.getModel().setPressed(false);
+            b.getModel().setArmed(false);
+        }
+        int pos=0;
         for(Computer computer: computers){
             String nameComputer = computer.getNombreEquipo();
             if(nameComputer.contains("linux")){
@@ -213,12 +233,11 @@ public class Redes extends javax.swing.JPanel  implements LoadData {
                 nameComputer = nameComputer.substring(8, nameComputer.length());
             }
             int numComputer = Integer.parseInt(nameComputer);
-            int pos = numComputer-101; //revisar esto y las posiciones, empieza desde el 101 el primer computador
-            if(pos>=0 && pos<=15 && //son 16 computadores
-                    computer.getLogOn()!=null && computer.getLogOff()==null){               
-                   if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
-                    //System.out.println("POS = "+pos);      
+            if(computer.getLogOn()!=null && computer.getLogOff()==null){               
+                    buttons.get(pos).doClick();
+                    //System.out.println("POS = "+pos);    
             }
+            pos++;
         }
     }
 

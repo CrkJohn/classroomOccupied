@@ -505,6 +505,11 @@ public class IngSoftware extends JPanel  implements LoadData {
     @Override
     public void reload() {
         List<Computer> computers = PanelMain.services.getComputadoresBySalon("ingSoftware");
+        for(javax.swing.JRadioButton b : buttons){
+            b.getModel().setPressed(false);
+            b.getModel().setArmed(false);
+        }
+        System.out.println("IMPRIMIENDO ING SOFTWARE");
         for(Computer computer: computers){
             String nameComputer = computer.getNombreEquipo();
             if(nameComputer.contains("linux")){
@@ -514,10 +519,9 @@ public class IngSoftware extends JPanel  implements LoadData {
             }
             int numComputer = Integer.parseInt(nameComputer);
             int pos = numComputer-1; // el primer computador es el 1
-            if(pos>=0 && pos<=23 // son 24 computadores
-                    && computer.getLogOn()!=null && computer.getLogOff()==null){               
-                   if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
-                    //System.out.println("POS = "+pos);      
+            if(computer.getLogOn()!=null && computer.getLogOff()==null){    
+                   buttons.get(pos).doClick();
+                  
             }
         }
     }

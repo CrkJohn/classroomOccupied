@@ -90,7 +90,7 @@ public class PanelMain extends JFrame implements Runnable {
     }
 
     private void IniciarTA() {
-        irPanel("ingSoftware");
+        irPanel("b0");
     }
 
     public void irPanel(String src) {
@@ -106,8 +106,8 @@ public class PanelMain extends JFrame implements Runnable {
     public static void main(String args[]) {
         PanelMain GUI = new PanelMain();
         GUI.setVisible(true);
-        //Thread t1 = new Thread(GUI);
-        //t1.start();
+        Thread t1 = new Thread(GUI);
+        t1.start();
     }
 
     @Override
@@ -122,8 +122,8 @@ public class PanelMain extends JFrame implements Runnable {
                 irPanel(salones[i]);
                 i = (i + 1) % 4; //;salones.length;
             }
-
         } catch (InterruptedException ex) {
+            System.err.println(ex.getMessage());
             Logger.getLogger(PanelMain.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

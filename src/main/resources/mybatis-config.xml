@@ -13,7 +13,7 @@
                 namebd = control
 		user = control
                 password = control20101
-		puerto = 3306		
+		puerto = 3306	
 	-->
 	<typeAliases>
         <typeAlias type='lab.eci.ocupados.entites.Computer' alias='Computer'/>

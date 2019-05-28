@@ -541,7 +541,12 @@ public class B0 extends JPanel implements LoadData{
     }
     
     public void reload(){
+        for(javax.swing.JRadioButton b : buttons){
+            b.getModel().setPressed(false);
+            b.getModel().setArmed(false);
+        }
         List<Computer> computers = PanelMain.services.getComputadoresBySalon("b0");
+        System.out.println("IMPRIMIENDO B0");
         for(Computer computer: computers){
             String nameComputer = computer.getNombreEquipo();
             if(nameComputer.contains("linux")){
@@ -553,8 +558,10 @@ public class B0 extends JPanel implements LoadData{
             int pos = numComputer-50; // el primer computador es el 50
             if(pos>=0 && pos<=24 //son 24 computadores
                     && numComputer<=74 && computer.getLogOn()!=null && computer.getLogOff()==null){               
-                   if(!buttons.get(pos).getModel().isPressed()) buttons.get(pos).doClick();
-                    //System.out.println("POS = "+pos);      
+                    buttons.get(pos).doClick();
+                            
+                            
+                    //System.out.println("POS = "+pos);
             }
         }
     }
