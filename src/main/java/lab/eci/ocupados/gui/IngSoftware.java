@@ -513,15 +513,15 @@ public class IngSoftware extends JPanel  implements LoadData {
         for(Computer computer: computers){
             String nameComputer = computer.getNombreEquipo();
             if(nameComputer.contains("linux")){
-                nameComputer = nameComputer.substring(5, nameComputer.length());
-             }else{
-                nameComputer = nameComputer.substring(8, nameComputer.length());
+                nameComputer = nameComputer.substring(6, nameComputer.length());
+            }else{
+                continue;
+                //nameComputer = nameComputer.substring(8, nameComputer.length());
             }
             int numComputer = Integer.parseInt(nameComputer);
             int pos = numComputer-1; // el primer computador es el 1
             if(computer.getLogOn()!=null && computer.getLogOff()==null){    
                    buttons.get(pos).doClick();
-                  
             }
         }
     }

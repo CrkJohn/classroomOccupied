@@ -283,12 +283,13 @@ public class Plataformas extends javax.swing.JPanel implements LoadData {
         }
         int pos = 0;
         for(Computer computer: computers){
-            System.out.println(computer);
+            //System.out.println(computer);
             String nameComputer = computer.getNombreEquipo();
             if(nameComputer.contains("linux")){
-                nameComputer = nameComputer.substring(5, nameComputer.length());
+                nameComputer = nameComputer.substring(6, nameComputer.length()); //linux-
              }else{
-                nameComputer = nameComputer.substring(8, nameComputer.length());
+                continue;
+                //nameComputer = nameComputer.substring(8, nameComputer.length());
             }
             int numComputer = Integer.parseInt(nameComputer);
             if(computer.getLogOn()!=null && computer.getLogOff()==null){
